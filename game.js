@@ -14,7 +14,8 @@ fg.src = "img/trava.png";
 pipeUp.src = "img/zybsnizy.png";
 pipeBotton.src = "img/zybsverhy.png";
 let gap = 140;
-document.addEventListener("keydown", moveUp, onclick); //срабатывает на момент нажатия клавиши
+document.addEventListener("click", moveUp);
+document.addEventListener("keydown", moveUp); //срабатывает на момент нажатия клавиши
 
 function moveUp() {
   yPos -= 25;
