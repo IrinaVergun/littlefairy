@@ -59,7 +59,7 @@ function draw() {
         alert("Пока, по желанию отправь отзыв на почту antohka803@gmail.com");
       }
     }
-    if (score === 100) {
+    if (score === 3) {
       alert("Ты чёртов победитель, Поздравляю!!!");
       return location.assign((salut.src = "img/salut.jpg"));
     }
