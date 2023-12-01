@@ -14,7 +14,7 @@ fg.src = "img/trava.png";
 pipeUp.src = "img/zybsnizy.png";
 pipeBotton.src = "img/zybsverhy.png";
 let gap = 140;
-document.addEventListener("keydown", moveUp); //срабатывает на момент нажатия клавиши
+document.addEventListener("keydown", moveUp, onclick); //срабатывает на момент нажатия клавиши
 
 function moveUp() {
   yPos -= 25;
@@ -59,10 +59,9 @@ function draw() {
         alert("Пока, по желанию отправь отзыв на почту antohka803@gmail.com");
       }
     }
-    if (score === 3) {
+    if (score === 100) {
       alert("Ты чёртов победитель, Поздравляю!!!");
-      // return location.reload();
-      // return location.assign((salut.src = "img/salut.jpg"));
+      return location.assign((salut.src = "img/salut.jpg"));
     }
     if (pipe[i].x == 5) {
       score++;
