@@ -61,7 +61,8 @@ function draw() {
     }
     if (score === 3) {
       alert("Ты чёртов победитель, Поздравляю!!!");
-      return location.assign((salut.src = "img/salut.jpg"));
+      return location.reload();
+      // return location.assign((salut.src = "img/salut.jpg"));
     }
     if (pipe[i].x == 5) {
       score++;
