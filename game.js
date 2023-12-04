@@ -67,7 +67,7 @@ function draw() {
         alert("Пока, по желанию отправь отзыв на почту antohka803@gmail.com");
       }
     }
-    if (score === 3) {
+    if (score === 100) {
       alert("Ты чёртов победитель, Поздравляю!!!");
       return location.assign((salut.src = "img/salut.jpg"));
     }
@@ -82,7 +82,7 @@ function draw() {
   yPos += graw;
   ctx.fillStyle = "#000";
   ctx.font = "24px Verdana";
-  ctx.fillText("Счёт:  " + score, 10, cvs.height - 20);
+  ctx.fillText("Счёт:  " + score, 10, cvs.height - 60);
   requestAnimationFrame(draw); // сщздаёт анимаю как фея падает, работает ка сет таймаут лучше для анимации
 }
 
