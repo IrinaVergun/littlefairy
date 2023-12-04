@@ -8,7 +8,7 @@ let pipeBotton = new Image();
 let salut = new Image();
 
 feya.src = "img/feya2.png";
-bg.src = "img/fon.jpg";
+bg.src = "img/fon1.jpg";
 fg.src = "img/trava.png";
 pipeUp.src = "img/zybsnizy.png";
 pipeBotton.src = "img/zybsverhy1.png";
@@ -17,8 +17,8 @@ let endmus = new Audio();
 let fly1 = new Audio();
 fly1.src = "audio/fly1.mp3";
 endmus.src = "audio/endmus.mp3 ";
-let allgame1 = new Audio();
-allgame1.src = "audio/allgame1.mp3";
+let allgame2 = new Audio();
+allgame2.src = "audio/allgame1.mp3";
 document.addEventListener("click", moveUp);
 document.addEventListener("keydown", moveUp); //срабатывает на момент нажатия клавиши
 
@@ -35,10 +35,10 @@ pipe[0] = {
 let score = 0;
 let xPos = 350;
 let yPos = 150;
-let graw = 1;
+let graw = 1.25;
 
 function draw() {
-  allgame1.play();
+  allgame2.play();
   ctx.drawImage(bg, 0, 0, 1100, 500);
   for (let i = 0; i < pipe.length; i++) {
     ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
@@ -71,7 +71,7 @@ function draw() {
       alert("Ты чёртов победитель, Поздравляю!!!");
       return location.assign((salut.src = "img/salut.jpg"));
     }
-    if (pipe[i].x == 5) {
+    if (pipe[i].x == 240) {
       score++;
     }
   }
