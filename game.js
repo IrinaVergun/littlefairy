@@ -6,38 +6,45 @@ let fg = new Image();
 let pipeUp = new Image();
 let pipeBotton = new Image();
 let salut = new Image();
-let endmus = new Audio();
-endmus.scr = "audio/endmus.mp3 ";
+
 feya.src = "img/feya2.png";
 bg.src = "img/fon.jpg";
 fg.src = "img/trava.png";
 pipeUp.src = "img/zybsnizy.png";
-pipeBotton.src = "img/zybsverhy.png";
+pipeBotton.src = "img/zybsverhy1.png";
 let gap = 140;
+let endmus = new Audio();
+let fly1 = new Audio();
+fly1.src = "audio/fly1.mp3";
+endmus.src = "audio/endmus.mp3 ";
+let allgame1 = new Audio();
+allgame1.src = "audio/allgame1.mp3";
 document.addEventListener("click", moveUp);
 document.addEventListener("keydown", moveUp); //срабатывает на момент нажатия клавиши
 
 function moveUp() {
   yPos -= 25;
+  return fly1.play();
 }
 //создание блоков
 let pipe = [];
 pipe[0] = {
-  x: 351,
+  x: 851,
   y: 0,
 };
 let score = 0;
-let xPos = 50;
+let xPos = 350;
 let yPos = 150;
-let graw = 1.25;
+let graw = 1;
 
 function draw() {
-  ctx.drawImage(bg, 0, 0, 520, 480);
+  allgame1.play();
+  ctx.drawImage(bg, 0, 0, 1100, 500);
   for (let i = 0; i < pipe.length; i++) {
     ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
     ctx.drawImage(pipeBotton, pipe[i].x, pipe[i].y + pipeUp.height + gap);
     pipe[i].x--;
-    if (pipe[i].x == 250) {
+    if (pipe[i].x == 800) {
       pipe.push({
         x: cvs.width,
         y: Math.floor(Math.random() * pipeUp.height) - pipeUp.height, // создаём новые блоки
@@ -60,7 +67,7 @@ function draw() {
         alert("Пока, по желанию отправь отзыв на почту antohka803@gmail.com");
       }
     }
-    if (score === 100) {
+    if (score === 3) {
       alert("Ты чёртов победитель, Поздравляю!!!");
       return location.assign((salut.src = "img/salut.jpg"));
     }
