@@ -83,7 +83,7 @@ function draw() {
   ctx.fillStyle = "#000";
   ctx.font = "24px Verdana";
   ctx.fillText("Счёт:  " + score, 10, cvs.height - 60);
-  // requestAnimationFrame(draw); // сщздаёт анимаю как фея падает, работает ка сет таймаут лучше для анимации
+  requestAnimationFrame(draw); // сщздаёт анимаю как фея падает, работает ка сет таймаут лучше для анимации
 }
 
 pipeBotton.onload = draw; //при загрузке последней картинки запускается функция рисовки
