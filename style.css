@@ -28,18 +28,24 @@
 @media screen and (min-width: 1600px) {
   .canvas {
     width: 1500px;
-    height: 600;
+    height: 650;
   }
 }
 @media screen and (min-width: 1800px) {
   .canvas {
     width: 1700px;
-    height: 650;
+    height: 800;
   }
 }
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1930px) {
   .canvas {
     width: 1850px;
-    height: 700;
+    height: 900px;
+  }
+  @media screen and (min-width: 2000px) {
+    .canvas {
+      width: 1920px;
+      height: 950px;
+    }
   }
 }
