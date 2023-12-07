@@ -28,13 +28,13 @@
 @media screen and (min-width: 1600px) {
   .canvas {
     width: 1500px;
-    height: 650;
+    height: 650px;
   }
 }
 @media screen and (min-width: 1800px) {
   .canvas {
     width: 1700px;
-    height: 800;
+    height: 800px;
   }
 }
 @media screen and (min-width: 1930px) {
