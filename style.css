@@ -27,7 +27,19 @@
 }
 @media screen and (min-width: 1600px) {
   .canvas {
+    width: 1500px;
+    height: 600;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .canvas {
     width: 1700px;
-    height: 900;
+    height: 650;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .canvas {
+    width: 1850px;
+    height: 700;
   }
 }
