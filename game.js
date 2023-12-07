@@ -37,21 +37,50 @@ let xPos = 350;
 let yPos = 150;
 let graw = 1.25;
 
+const GRANITSA = 850;
+
 function draw() {
   allgame2.play();
   ctx.drawImage(bg, 0, 0, 1250, 550);
   for (let i = 0; i < pipe.length; i++) {
     ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
     ctx.drawImage(pipeBotton, pipe[i].x, pipe[i].y + pipeUp.height + gap);
-    pipe[i].x--;
-    if (pipe[i].x == 800) {
-      pipe.push({
-        x: cvs.width,
-        y: Math.floor(Math.random() * pipeUp.height) - pipeUp.height, // создаём новые блоки
-      });
+
+    if (score <= 5) {
+      pipe[i].x--;
+      if (!pipe[i].kopiyaDobavlena && pipe[i].x < GRANITSA) {
+        pipe[i].kopiyaDobavlena = true;
+        pipe.push({
+          x: cvs.width - 100,
+          y: Math.floor(Math.random() * pipeUp.height) - pipeUp.height, // создаём новые блоки
+        });
+      }
+    } else if (score <= 70) {
+      pipe[i].x--;
+      pipe[i].x--;
+
+      if (!pipe[i].kopiyaDobavlena && pipe[i].x < GRANITSA) {
+        pipe[i].kopiyaDobavlena = true;
+        pipe.push({
+          x: cvs.width - 100,
+          y: Math.floor(Math.random() * pipeUp.height) - pipeUp.height, // создаём новые блоки
+        });
+      }
+    } else if (score <= 101) {
+      pipe[i].x--;
+      pipe[i].x--;
+      pipe[i].x--;
+      if (!pipe[i].kopiyaDobavlena && pipe[i].x < GRANITSA) {
+        pipe[i].kopiyaDobavlena = true;
+        pipe.push({
+          x: cvs.width - 100,
+          y: Math.floor(Math.random() * pipeUp.height) - pipeUp.height, // создаём новые блоки
+        });
+      }
     }
     //если фея находиться в начале блока в серединке или в конце в преелах высоты то перезапуск всей игры
     //отслеживание прикосновений xgor y ver
+
     if (
       (xPos + feya.width - 15 >= pipe[i].x &&
         xPos <= pipe[i].x + pipeUp.width - 15 &&
@@ -71,7 +100,8 @@ function draw() {
       alert("Ты чёртов победитель, Поздравляю!!!");
       return location.assign((salut.src = "img/salut.jpg"));
     }
-    if (pipe[i].x == 240) {
+    if (!pipe[i].trubaPoschitana && pipe[i].x < 240) {
+      pipe[i].trubaPoschitana = true;
       score++;
     }
   }
@@ -83,7 +113,11 @@ function draw() {
   ctx.fillStyle = "#000";
   ctx.font = "24px Verdana";
   ctx.fillText("Счёт:  " + score, 10, cvs.height - 60);
+  //   setTimeout(() => {
+  //     draw();
   requestAnimationFrame(draw); // сщздаёт анимаю как фея падает, работает ка сет таймаут лучше для анимации
+  //   }, 4);
 }
-
+function later() {}
+later();
 pipeBotton.onload = draw; //при загрузке последней картинки запускается функция рисовки
