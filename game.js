@@ -39,7 +39,7 @@ let graw = 1.25;
 
 function draw() {
   allgame2.play();
-  ctx.drawImage(bg, 0, 0, 1100, 500);
+  ctx.drawImage(bg, 0, 0, 1250, 550);
   for (let i = 0; i < pipe.length; i++) {
     ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
     ctx.drawImage(pipeBotton, pipe[i].x, pipe[i].y + pipeUp.height + gap);
@@ -83,7 +83,7 @@ function draw() {
   ctx.fillStyle = "#000";
   ctx.font = "24px Verdana";
   ctx.fillText("Счёт:  " + score, 10, cvs.height - 60);
-  requestAnimationFrame(draw); // сщздаёт анимаю как фея падает, работает ка сет таймаут лучше для анимации
+  // requestAnimationFrame(draw); // сщздаёт анимаю как фея падает, работает ка сет таймаут лучше для анимации
 }
 
 pipeBotton.onload = draw; //при загрузке последней картинки запускается функция рисовки

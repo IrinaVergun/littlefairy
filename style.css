@@ -1,6 +1,33 @@
+/* .view {
+  width: 1100px;
+  height: 500px;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 576px) {
-  .canvas {
+  /* image-conteiner {
+    background-image: url("img/fon3.jpg");
+  } */
+/* .view {
     width: 400px;
-    height: 900px;
+    height: 800px;
+  }
+
+  .canvas {
+    transform: scale(2);
+    margin-left: -90px;
+    margin-top: 190px;
+  } */
+/* } */
+@media screen and (min-width: 1350px) {
+  .canvas {
+    width: 1250px;
+    height: 550px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .canvas {
+    width: 1700px;
+    height: 900;
   }
 }
