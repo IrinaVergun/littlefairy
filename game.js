@@ -40,12 +40,14 @@ let graw = 1.25;
 const GRANITSA = 850;
 
 function draw() {
-  allgame2.play();
+  allgame2.play(true);
   ctx.drawImage(bg, 0, 0, 1250, 550);
   for (let i = 0; i < pipe.length; i++) {
     ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
     ctx.drawImage(pipeBotton, pipe[i].x, pipe[i].y + pipeUp.height + gap);
-
+    // if(feya.height=){
+    //   alert('stop')
+    // }
     if (score <= 5) {
       pipe[i].x--;
       if (!pipe[i].kopiyaDobavlena && pipe[i].x < GRANITSA) {
@@ -88,6 +90,7 @@ function draw() {
           yPos + feya.height >= pipe[i].y + pipeUp.height + gap)) ||
       yPos + feya.height >= cvs.height - fg.height
     ) {
+      allgame2.pause();
       endmus.play();
       let per = confirm(`Cыграть ещё? Твой счёт: ${score} `);
       if (per) {
