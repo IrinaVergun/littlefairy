@@ -1,24 +1,8 @@
-/* .view {
-  width: 1100px;
-  height: 500px;
-  overflow: hidden;
+.canvas {
+  border: 5px solid black;
+
+  /* transform: translate(-20%, -20%); */
 }
-
-@media screen and (max-width: 576px) {
-  /* image-conteiner {
-    background-image: url("img/fon3.jpg");
-  } */
-/* .view {
-    width: 400px;
-    height: 800px;
-  }
-
-  .canvas {
-    transform: scale(2);
-    margin-left: -90px;
-    margin-top: 190px;
-  } */
-/* } */
 @media screen and (min-width: 1350px) {
   .canvas {
     width: 1250px;

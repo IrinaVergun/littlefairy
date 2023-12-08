@@ -21,7 +21,7 @@ let allgame2 = new Audio();
 allgame2.src = "audio/allgame1.mp3";
 document.addEventListener("click", moveUp);
 document.addEventListener("keydown", moveUp); //срабатывает на момент нажатия клавиши
-
+cvs.align = "center";
 function moveUp() {
   yPos -= 25;
   return fly1.play();
@@ -40,14 +40,14 @@ let graw = 1.25;
 const GRANITSA = 850;
 
 function draw() {
-  allgame2.play(true);
+  allgame2.play();
   ctx.drawImage(bg, 0, 0, 1250, 550);
   for (let i = 0; i < pipe.length; i++) {
     ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
     ctx.drawImage(pipeBotton, pipe[i].x, pipe[i].y + pipeUp.height + gap);
-    // if(feya.height=){
-    //   alert('stop')
-    // }
+    if (yPos + feya.height === cvs.height - cvs.height + feya.height) {
+      alert("Границу видешь? Опускайся!");
+    }
     if (score <= 5) {
       pipe[i].x--;
       if (!pipe[i].kopiyaDobavlena && pipe[i].x < GRANITSA) {
